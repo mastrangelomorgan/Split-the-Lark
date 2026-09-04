@@ -20,7 +20,7 @@
   body {
     background: var(--yellow);
     color: var(--black);
-    font-family: 'IM Fell English', serif;
+    font-family: 'Hoefler Text', 'Garamond', 'Times New Roman', serif;
     overflow-x: hidden;
     cursor: default;
   }
@@ -70,9 +70,9 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 5.8rem 3rem 2.9rem;
+    align-items: flex-start;
+    text-align: left;
+    padding: 4.6rem 2.4rem 2.3rem;
     position: relative;
     overflow: hidden;
   }
@@ -135,6 +135,47 @@
     color: var(--black);
   }
 
+
+  .poem-hero {
+    max-width: 640px;
+    font-family: 'Hoefler Text', 'Garamond', serif;
+  }
+
+  .poem-line {
+    font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+    line-height: 1.9;
+    font-style: italic;
+    text-align: left;
+    margin: 0;
+  }
+
+  .poem-spacer {
+    height: 1.5rem;
+  }
+
+  .poem-title {
+    font-family: 'IM Fell English SC', serif;
+    font-size: clamp(2rem, 4.5vw, 3.4rem);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    font-style: normal;
+    display: inline-block;
+    line-height: 1;
+    vertical-align: baseline;
+    margin-right: 0.3rem;
+  }
+
+  .poem-cite {
+    display: block;
+    text-align: left;
+    font-size: 0.85rem;
+    margin-top: 2rem;
+    opacity: 0.5;
+    font-style: normal;
+    letter-spacing: 0.1em;
+    font-family: 'IM Fell English SC', serif;
+  }
+
   /* DIVIDER */
   .divider {
     width: 100%;
@@ -143,53 +184,10 @@
   }
 
   /* ABOUT */
-  .about {
-    padding: 6rem 3rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 6rem;
-    align-items: center;
-    background: var(--black);
-    color: var(--yellow);
-  }
-
-  .about-text h2 {
-    font-family: 'IM Fell English', serif;
-    font-size: clamp(2rem, 4vw, 3.5rem);
-    margin-bottom: 2rem;
-    line-height: 1.1;
-  }
-
-  .about-text p {
-    font-style: italic;
-    font-size: 1.1rem;
-    line-height: 1.8;
-    margin-bottom: 1.5rem;
-    opacity: 0.9;
-  }
-
-  .about-poem {
-    font-family: 'IM Fell English', serif;
-    font-style: italic;
-    font-size: clamp(1.1rem, 2vw, 1.5rem);
-    line-height: 1.9;
-    border-left: 3px solid var(--yellow);
-    padding-left: 2rem;
-    opacity: 0.85;
-  }
-
-  .about-poem cite {
-    display: block;
-    font-size: 0.85rem;
-    margin-top: 1rem;
-    opacity: 0.6;
-    font-style: normal;
-    letter-spacing: 0.08em;
-  }
 
   /* ARTISTS */
   .artists {
-    padding: 6rem 3rem;
+    padding: 4.8rem 2.4rem;
     background: var(--yellow);
   }
 
@@ -244,7 +242,7 @@
 
   /* MEDIA */
   .media {
-    padding: 6rem 3rem;
+    padding: 4.8rem 2.4rem;
     background: var(--black);
     color: var(--yellow);
   }
@@ -283,7 +281,7 @@
 
   /* SUPPORT */
   .support {
-    padding: 6rem 3rem;
+    padding: 4.8rem 2.4rem;
     background: var(--yellow);
     position: relative;
     overflow: hidden;
@@ -395,9 +393,9 @@
 
   /* UPCOMING */
   .upcoming {
-    padding: 5rem 3rem;
+    padding: 4rem 2.4rem;
     background: var(--yellow);
-    text-align: center;
+    text-align: left;
     border-top: 3px solid var(--black);
   }
 
@@ -415,8 +413,6 @@
     line-height: 1.1;
     margin-bottom: 1rem;
     max-width: 22ch;
-    margin-left: auto;
-    margin-right: auto;
   }
 
   .upcoming-meta {
@@ -436,14 +432,14 @@
     font-size: 1.05rem;
     line-height: 1.7;
     max-width: 60ch;
-    margin: 0 auto 2.5rem;
+    margin: 0 0 2.5rem;
     opacity: 0.9;
   }
 
   .upcoming-actions {
     display: flex;
     gap: 1.5rem;
-    justify-content: center;
+    justify-content: flex-start;
     flex-wrap: wrap;
   }
 
@@ -453,10 +449,7 @@
     to { opacity: 1; transform: translateY(0); }
   }
 
-  .hero-eyebrow { animation: fadeUp 0.8s ease both; }
-  .hero-title { animation: fadeUp 0.8s 0.15s ease both; }
-  .hero-subtitle { animation: fadeUp 0.8s 0.3s ease both; }
-  .hero-actions { animation: fadeUp 0.8s 0.45s ease both; }
+  .poem-hero { animation: fadeUp 1.2s ease both; }
 
   /* RESPONSIVE */
   @media (max-width: 768px) {
@@ -476,7 +469,6 @@
 <nav>
   <a class="nav-logo" href="#home">Split the Lark</a>
   <ul class="nav-links">
-    <li><a href="#about">About</a></li>
     <li><a href="#artists">Artists</a></li>
     <li><a href="#media">Media</a></li>
     <li><a href="#support">Support</a></li>
@@ -485,10 +477,17 @@
 </nav>
 
 <section class="hero" id="home">
-  <p class="hero-eyebrow">Boston · New York · Philadelphia · Est. 2026</p>
-  <h1 class="hero-title">Split the Lark</h1>
-  <p class="hero-subtitle">A period-instrument ensemble with a certain point of view.</p>
-  <div class="hero-actions">
+  <div class="poem-hero">
+    <p class="poem-line"><span class="poem-title">Split the Lark</span> — and you'll find the Music —</p>
+    <p class="poem-line">Bulb after Bulb, in Silver rolled —</p>
+    <p class="poem-line">Scantily dealt to the Summer Morning</p>
+    <p class="poem-line">Saved for your Ear when Lutes be old.</p>
+    <p class="poem-spacer"></p>
+    <p class="poem-line">Loose the Flood — you shall find it patent —</p>
+    <p class="poem-line">Gush after Gush, reserved for you —</p>
+    <p class="poem-line">Scarlet Experiment! Sceptic Thomas!</p>
+    <p class="poem-line">Now, do you doubt that your Bird was true?</p>
+    <cite class="poem-cite">— Emily Dickinson, c. 1864</cite>
   </div>
 </section>
 
@@ -538,25 +537,6 @@
   <div class="media-grid">
     <div class="media-embed"><iframe src="https://www.youtube.com/embed/1iwX6gnPlOE" allowfullscreen></iframe></div>
     <div class="media-embed"><iframe src="https://www.youtube.com/embed/--d5y9QL7So" allowfullscreen></iframe></div>
-  </div>
-</section>
-
-
-
-<section class="about" id="about">
-  <div class="about-text">
-    <h2>Why Split the Lark</h2>
-  </div>
-  <div class="about-poem">
-    <p>Split the Lark — and you'll find the Music —<br>
-    Bulb after Bulb, in Silver rolled —<br>
-    Scantily dealt to the Summer Morning<br>
-    Saved for your Ear when Lutes be old.<br><br>
-    Loose the Flood — you shall find it patent —<br>
-    Gush after Gush, reserved for you —<br>
-    Scarlet Experiment! Sceptic Thomas!<br>
-    Now, do you doubt that your Bird was true?</p>
-    <cite>— Emily Dickinson, c. 1864</cite>
   </div>
 </section>
 
