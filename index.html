@@ -155,7 +155,7 @@
 
   .poem-title {
     font-family: 'Hoefler Text', 'Garamond', serif;
-    font-size: clamp(3.5rem, 8.5vw, 6.5rem);
+    font-size: clamp(3rem, 7vw, 5.25rem);
     font-weight: 600;
     letter-spacing: 0.01em;
     font-style: normal;
@@ -179,9 +179,9 @@
 
   .title-row {
     display: flex;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    gap: 1.5rem 2rem;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 1.5rem 2.5rem;
     margin-bottom: 0.5rem;
     position: relative;
   }
@@ -194,15 +194,15 @@
     font-family: 'Hoefler Text', 'Garamond', serif;
     display: flex;
     align-items: center;
-    align-self: flex-end;
-    margin-bottom: 1rem;
+    align-self: center;
+    margin-bottom: 0;
     color: var(--black);
     gap: 0.5rem;
   }
 
   .paren {
     font-family: 'Hoefler Text', 'Garamond', serif;
-    font-size: clamp(6rem, 12vw, 10rem);
+    font-size: clamp(5rem, 9vw, 7.5rem);
     line-height: 0.6;
     font-weight: 300;
     font-style: italic;
@@ -276,11 +276,13 @@
     100% { opacity: 1; transform: translateY(0) scaleY(1); }
   }
 
-  @media (max-width: 640px) {
+  @media (max-width: 900px) {
+    .title-row {
+      flex-wrap: wrap;
+    }
     .tagline {
       align-self: flex-start;
-      margin-bottom: 0;
-      margin-top: 0.75rem;
+      margin-top: 0.5rem;
     }
     .paren {
       font-size: 5.5rem;
@@ -633,7 +635,7 @@
   <div class="upcoming-eyebrow">Upcoming</div>
   <h2 class="upcoming-title">Italian Opera in the Age of the American Revolution</h2>
   <p class="upcoming-meta"><strong>October 19, 2026</strong> · 7:00 PM · The Italian Academy at Columbia University · 1161 Amsterdam Ave, NYC</p>
-  <p class="upcoming-blurb">Split the Lark's inaugural program recreates a slice of New York City's musical life circa 1776. Lesser-known arias by Thomas Arne and Niccolò Piccinni, premiered on American soil in Revolutionary-era New York, were New Yorkers' first introductions to European concert music and shaped the aesthetics of the first generation of homegrown American musicians. Arias from Handel, Vivaldi, and A. Scarlatti round out the program, contextualizing the Italianate operatic tradition that took root across the Atlantic.</p>
+  <p class="upcoming-blurb">Split the Lark's inaugural program recreates a slice of New York City's musical life circa 1776. Lesser-known arias by Thomas Arne and Niccolò Piccinni, premiered on American soil in Revolutionary-era New York, were Americans' first introductions to European concert music and shaped the aesthetics of the first generation of homegrown American musicians. Arias from Handel, Vivaldi, and A. Scarlatti round out the program, contextualizing the Italianate operatic tradition that took root across the Atlantic.</p>
   <div class="upcoming-actions">
     <a href="https://italianacademy.columbia.edu/events/italian-opera-age-american-revolution-baroque-ensemble-split-lark" class="btn btn-filled" target="_blank" rel="noopener">Event Details</a>
   </div>
